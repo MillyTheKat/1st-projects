@@ -1,11 +1,16 @@
+import random
+
 import requests
 
-word = input("Please enter the first word: ")
-response = requests.get(f"https://api.dictionaryapi.dev/api/v2/entries/en/{word}")
-if response.status_code == 200:
-    found_in_dictionary = response.json()
-    if found_in_dictionary.size() > 0:
-        print("Word exists")
+player = input("Your turn: ").lower()
+word_check = requests.get(f"https://api.dictionaryapi.dev/api/v2/entries/en/{player}")
+if word_check.status_code == 200:
+    found_in_dictionary = word_check.json()
+    if len(found_in_dictionary) > 0:
+        last_letter = player[-1]
+
+
+        computer = random.choice(list_word)
     else:
         print("Word does not exist")
 else:
