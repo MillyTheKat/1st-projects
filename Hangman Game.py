@@ -24,11 +24,11 @@ def random_word(mode):
         return None
 
 
-def display_update_word(player_choice, display_word, guess):
+def display_update_word(player_choice, display_words, guessing):
     for index, letter in enumerate(player_choice):
-        if letter == guess:
-            display_word[index] = guess
-    return display_word
+        if letter == guessing:
+            display_words[index] = guessing
+    return display_words
 
 
 print("Welcome to the Hangman Game. I give you 10 hearts. Please don't die!")
