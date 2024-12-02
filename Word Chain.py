@@ -14,7 +14,7 @@ while True:
         if len(found_in_dictionary) > 0:
             last_letter = player[-1]
 
-            computer_word = requests.get(f"https://api.datamuse.com/words?sp={last_letter}*&max=10")
+            computer_word = requests.get(f"https://api.datamuse.com/words?sp={last_letter}*&max=100")
             if computer_word.status_code == 200:
                 word_list = [word['word'] for word in computer_word.json()]
                 if word_list:
