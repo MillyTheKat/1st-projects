@@ -9,7 +9,13 @@ def generate_random_color():
 
 players = {}
 race_distance = 30
-n = int(input("Please enter the number of player: "))
+
+while True:
+    try:
+        n = int(input("Please enter the number of player: "))
+        break
+    except ValueError:
+        print("Invalid input. Please enter a valid number.")
 
 while len(players) < n:
     name = input("Please enter your name: ").strip()
