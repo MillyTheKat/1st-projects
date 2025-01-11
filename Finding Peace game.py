@@ -35,13 +35,12 @@ else:
 
 paragraph4 = "The merchant’s eyes widened slightly, then softened with sympathy. 'Perhaps it’s fate that brought you here. We’ll do our best to help you figure it out.'"
 paragraph5 = "After the exchange, you shifted your attention to a small bag near your side. Inside, you found a handful of coins, three healing potions, and an old, worn book. Its cover was faded, the title illegible, and its pages seemed incomplete, as though something vital had been torn away."
-paragraph6 = "The merchant noticed the book and leaned closer. 'That book… it looks like the kind described in the stories of the Pond of Peace,' he said. 'They say such books can restore lost memories—but only with a special pen to guide their magic.'"
-paragraph7 = "The merchant nods, his expression thoughtful. 'A myth. They say it’s a place where lost memories can be restored—or erased—depending on what the seeker desires. But a book like that…' He gestures toward the strange object in your hands. 'It needs something to awaken it. Something like… this.'"
-paragraph8 = "From his belt, he pulled out a pen unlike any you had ever seen. It shimmered faintly with an otherworldly glow, its sleek surface etched with intricate runes that pulsed softly in harmony with the book. As they held it closer, the inkpot on the book’s cover seemed to react, glowing faintly, as though the two were meant to be together."
-paragraph9 = "'This pen,' the merchant said, 'was a gift I received years ago. It’s not easy to come by, but it could help you unlock the book’s secrets. However...'  They hesitated before continuing, 'it won’t come cheap. I’ll sell it to you for 100 coins'"
-paragraph10 = "You looked down at your small bag of coins, realizing the cost would leave you with nothing for the journey ahead.\n\nThe merchant noticed your hesitation. 'If that’s too steep, perhaps there’s another way. What do you say?'"
+paragraph6 = "The merchant nods, his expression thoughtful. 'A myth. They say it’s a place where lost memories can be restored—or erased—depending on what the seeker desires. But a book like that…' He gestures toward the strange object in your hands. 'It needs something to awaken it. Something like… this.'"
+paragraph7 = "From his belt, he pulled out a pen unlike any you had ever seen. It shimmered faintly with an otherworldly glow, its sleek surface etched with intricate runes that pulsed softly in harmony with the book. As they held it closer, the inkpot on the book’s cover seemed to react, glowing faintly, as though the two were meant to be together."
+paragraph8 = "'This pen,' the merchant said, 'was a gift I received years ago. It’s not easy to come by, but it could help you unlock the book’s secrets. However...'  They hesitated before continuing, 'it won’t come cheap. I’ll sell it to you for 100 coins'"
+paragraph9 = "You looked down at your small bag of coins, realizing the cost would leave you with nothing for the journey ahead.\n\nThe merchant noticed your hesitation. 'If that’s too steep, perhaps there’s another way. What do you say?'"
 
-text2 = paragraph4 + "\n\n" + paragraph5 + "\n\n" + paragraph6 + "\n\n" + paragraph7 + "\n\n" + paragraph8 + "\n\n" + paragraph9 + "\n\n" + paragraph10 + "\n"
+text2 = paragraph4 + "\n\n" + paragraph5 + "\n\n" + paragraph6 + "\n\n" + paragraph7 + "\n\n" + paragraph8 + "\n\n" + paragraph9 + "\n"
 print(text2)
 
 print("1. Pay for it")
