@@ -1,9 +1,38 @@
 player = input("Please enter your name: ")
 print(f"Hello {player}, let's begin your adventure!")
 
-heal = 10
-attack = 3
-defense = 2
+player_info = {
+    "heal" : 10,
+    "attack" : 3,
+    "defense" : 2,
+    "level" : 1,
+    "XP" : 0,
+    "level_up" : 10,
+}
+
+forest_beast = {
+    "Wolf": {"health": 8, "attack": 4, "defense": 1},
+    "Wild Boar": {"health": 12, "attack": 5, "defense": 2},
+    "Bandit": {"health": 15, "attack": 6, "defense": 3}
+}
+
+swamp_beast = {
+    "Giant Spider": {"health": 10, "attack": 4, "defense": 2},
+    "Swamp Serpent": {"health": 14, "attack": 6, "defense": 2},
+    "Bog Golem": {"health": 18, "attack": 7, "defense": 5}
+}
+
+snowy_beast = {
+    "Polar Bear": {"health": 16, "attack": 6, "defense": 4},
+    "Frost Viking": {"health": 20, "attack": 7, "defense": 5},
+    "Ice Phantom": {"health": 12, "attack": 5, "defense": 3}
+}
+
+mountain_beast = {
+    "Shadow Wraith": {"health": 14, "attack": 7, "defense": 3},
+    "Undead Knight": {"health": 18, "attack": 8, "defense": 5},
+    "Bone Wyvern": {"health": 25, "attack": 10, "defense": 6}
+}
 
 print("\n\nPrologue: The Journey Begins")
 paragraph1 = "The gentle creak of wooden wheels and the rhythmic clatter of hooves on a dusty road pulled you from a deep, dreamless sleep. Blinking against the morning light, you found yourself lying on a makeshift bed in the back of a merchant’s carriage."

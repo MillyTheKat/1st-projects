@@ -1,4 +1,4 @@
-import random
+37import random
 random_number = random.randint(1,100)
 print("Please guess the number from 1 to 100")
 while True:
