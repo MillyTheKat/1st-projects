@@ -2,12 +2,11 @@ player = input("Please enter your name: ")
 print(f"Hello {player}, let's begin your adventure!")
 
 player_info = {
-    "heal" : 10,
-    "attack" : 3,
-    "defense" : 2,
-    "level" : 1,
-    "XP" : 0,
-    "level_up" : 10,
+    "heal": 10,
+    "attack": 3,
+    "defense": 2,
+    "level": 1,
+    "level_up": 10,
 }
 
 forest_beast = {
@@ -34,10 +33,17 @@ mountain_beast = {
     "Bone Wyvern": {"health": 25, "attack": 10, "defense": 6}
 }
 
+final_boss = {
+    "name": "Zephyros Abyssus, the Dragon of Misery",
+    "health": 100,
+    "attack": 15,
+    "defense": 8,
+}
+
 print("\n\nPrologue: The Journey Begins")
 paragraph1 = "The gentle creak of wooden wheels and the rhythmic clatter of hooves on a dusty road pulled you from a deep, dreamless sleep. Blinking against the morning light, you found yourself lying on a makeshift bed in the back of a merchant’s carriage."
 paragraph2 = "A voice greeted you—a kindly merchant sitting at the reins, glancing back over their shoulder. 'Ah, you're awake! We found you by the roadside. You looked like you needed help, so we brought you along. But now that you're up...' The merchant paused, studying you with curiosity. 'Who are you, traveler?'"
-paragraph3 = "You hesitated. The question hung in the air, but the answer wouldn’t come easily"
+paragraph3 = "You hesitated. The question hung in the air, but the answer wouldn't come easily"
 
 text1 = paragraph1 + "\n\n" + paragraph2 + "\n\n" + paragraph3 + "\n"
 print(text1)
@@ -86,5 +92,3 @@ if player_choice2 == 1:
     print("You sighed and handed over your coins. 'Here you are,' you said reluctantly.\n\nThe merchant nodded, passing you the pen with a knowing smile. 'A fair trade. This pen is yours now. Treat it well—it’s more than just a tool.'")
 else:
     print("You cleared your throat. 'I don’t have enough to pay for it. Is there something I can do in exchange?'\n\nThe merchant’s eyes gleamed with interest. 'As a matter of fact, yes. We’ve had a bit of trouble lately, and someone with your determination might just be able to help us.'")
-
-
