@@ -91,4 +91,19 @@ while True:
 if player_choice2 == 1:
     print("You sighed and handed over your coins. 'Here you are,' you said reluctantly.\n\nThe merchant nodded, passing you the pen with a knowing smile. 'A fair trade. This pen is yours now. Treat it well—it’s more than just a tool.'")
 else:
-    print("You cleared your throat. 'I don’t have enough to pay for it. Is there something I can do in exchange?'\n\nThe merchant’s eyes gleamed with interest. 'As a matter of fact, yes. We’ve had a bit of trouble lately, and someone with your determination might just be able to help us.'")
+    print("You cleared your throat. 'I don’t have enough to pay for it. Is there something I can do in exchange?'")
+    print("The merchant’s eyes gleamed with interest.'You don’t have the coin, but I believe in fair trade. If you want the pen, you can work for it.' He folds his arms. 'I’ve got two problems—choose one.'")
+    print("'My bag of rare spices fell off the cart a while back. Trouble is, that path is crawling with wild boars. If you can find it and bring it back, the pen is yours.'")
+    print("'Or Wolves have been stalking us for miles. They’ll attack when the sun sets. If you stand guard and help us fight them off, I’ll give you the pen.'")
+    print("The merchant smirks. 'What’s it going to be?'\n\n")
+    print("1. Get the rare spices")
+    print("2. Fight the wolves")
+
+    while True:
+        try:
+            player_choice_option = int(input("Please enter your choice: "))
+            break
+        except ValueError:
+            print("Invalid input. Please enter your choice again.")
+
+    if player_choice_option == 1:
