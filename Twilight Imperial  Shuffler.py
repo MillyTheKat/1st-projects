@@ -134,78 +134,86 @@ for faction_info in chosen_factions:
         first_choice.remove(faction_info)
 second_choice_base = first_choice + list(expansion_factions_list.keys())
 
+def print_faction_info(player_faction, faction_dict):
+    print(f"\n{player_faction}:")
+    if player_choice == 1:
+        print(f"  - Description: {faction_dict[player_faction]['Description']}")
+    elif player_choice == 2:
+        print(f"  - Pros: {faction_dict[player_faction]['Pros']}")
+    elif player_choice == 3:
+        print(f"  - Cons: {faction_dict[player_faction]['Cons']}")
+    elif player_choice == 4:
+        print(f"  - Pros: {faction_dict[player_faction]['Pros']}")
+        print(f"  - Cons: {faction_dict[player_faction]['Cons']}")
+    elif player_choice == 5:
+        print(f"  - Description: {faction_dict[player_faction]['Description']}")
+        print(f"  - Pros: {faction_dict[player_faction]['Pros']}")
+        print(f"  - Cons: {faction_dict[player_faction]['Cons']}")
+
 while True:
     try:
-        player_number = int(input("Please enter the number of players: "))
-        break
+        player_number = int(input("Please enter the number of players (min 2, max 8): "))
+        if player_number in range(2, 9):
+            break
     except ValueError:
         print("Invalid input. Please enter the number again.")
 
 while len(players) < player_number:
     player_name = input(f"Please enter your name: ").strip()
+    if not player_name:
+        print("Please enter a valid name.")
+        continue
     if player_name in players:
         print("This name is already taken. Please choose the other name.")
-    else:
-        player_first_choice = random.choice(first_choice)
-        second_choice = second_choice_base.copy()
-        second_choice.remove(player_first_choice)
-        player_second_choice = random.choice(second_choice)
-        players[player_name] = (player_first_choice, player_second_choice)
-        print(f"Welcome {player_name}. You have 2 choices: {player_first_choice} and {player_second_choice}")
-        print("Do you want to know short description, pros and/or cons?")
-        print("1. description only.")
-        print("2. Pros only.")
-        print("3. Cons only.")
-        print("4. Pros and Cons.")
-        print("5. All information")
-        print("6. I want to choose my faction.")
+        continue
 
-    def print_faction_info(faction_info, faction_dict):
-        print(f"\n{faction_info}:")
-            if player_choice == 1:
-                print(f"  - Description: {faction_dict[faction_info]['Description']}")
-            elif player_choice == 2:
-                print(f"  - Pros: {faction_dict[faction_info]['Pros']}")
-            elif player_choice == 3:
-                print(f"  - Cons: {faction_dict[faction_info]['Cons']}")
-            elif player_choice == 4:
-                print(f"  - Pros: {faction_dict[faction_info]['Pros']}")
-                print(f"  - Cons: {faction_dict[faction_info]['Cons']}")
-            elif player_choice == 5:
-                print(f"  - Description: {faction_dict[faction_info]['Description']}")
-                print(f"  - Pros: {faction_dict[faction_info]['Pros']}")
-                print(f"  - Cons: {faction_dict[faction_info]['Cons']}")
+    player_first_choice = random.choice(first_choice)
+    second_choice = second_choice_base.copy()
+    second_choice.remove(player_first_choice)
+    player_second_choice = random.choice(second_choice)
+    players[player_name] = (player_first_choice, player_second_choice)
+    print(f"Welcome {player_name}. You have 2 choices: {player_first_choice} and {player_second_choice}")
+    print("Do you want to know short description, pros and/or cons?")
+    print("1. description only.")
+    print("2. Pros only.")
+    print("3. Cons only.")
+    print("4. Pros and Cons.")
+    print("5. All information")
+    print("6. I want to choose my faction.")
 
-        while True:
-            try:
-                player_choice = int(input("I choose (1-6): "))
-                if player_choice not in range(1, 7):
-                    print("Please enter a number 1 to 6.")
-                    continue
-                elif player_choice == 6:
-                    print(f"Please choose 1. {player_first_choice} or 2. {player_second_choice} ")
+    while True:
+        try:
+            player_choice = int(input("I choose (1-6): "))
+            if player_choice not in range(1, 7):
+                print("Please enter a number 1 to 6.")
+                continue
+            elif player_choice == 6:
+                print(f"Please choose 1. {player_first_choice} or 2. {player_second_choice} ")
 
-                    while True:
-                        try:
-                            player_chosen_faction = int(input("I want my faction is (1 or2) "))
-                            if player_chosen_faction == 1:
-                                print(f"Welcome {player_name}, your faction is {player_first_choice}")
-                                chosen_factions.append(player_first_choice)
-                            else:
-                                print(f"Welcome {player_name}, your faction is {player_second_choice}")
-                                chosen_factions.append(player_second_choice)
-                            break
-                        except ValueError:
-                            print("Invalid input. Please choose 1 or 2.")
-                    break
-                else:
-                    if player_first_choice in basic_factions_list:
-                        print_faction_info(player_first_choice, basic_factions_list)
+                while True:
+                    try:
+                        player_chosen_faction = int(input("I want my faction is (1 or 2) "))
+                        if player_chosen_faction not in range (1, 3):
+                            print("Please choose 1 or 2")
+                            continue
+                        elif player_chosen_faction == 1:
+                            print(f"Welcome {player_name}, your faction is {player_first_choice}")
+                            chosen_factions.append(player_first_choice)
+                        else:
+                            print(f"Welcome {player_name}, your faction is {player_second_choice}")
+                            chosen_factions.append(player_second_choice)
+                        break
+                    except ValueError:
+                        print("Invalid input. Please choose 1 or 2.")
+                break
+            else:
+                if player_first_choice in basic_factions_list:
+                    print_faction_info(player_first_choice, basic_factions_list)
 
-                    if player_second_choice in basic_factions_list:
-                        print_faction_info(player_second_choice, basic_factions_list)
-                    elif player_second_choice in expansion_factions_list:
-                        print_faction_info(player_second_choice, expansion_factions_list)
+                if player_second_choice in basic_factions_list:
+                    print_faction_info(player_second_choice, basic_factions_list)
+                elif player_second_choice in expansion_factions_list:
+                    print_faction_info(player_second_choice, expansion_factions_list)
 
-            except ValueError:
-                print("Invalid input. Please choose again.")
+        except ValueError:
+            print("Invalid input. Please choose again.")
